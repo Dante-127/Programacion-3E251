@@ -42,7 +42,7 @@ public:
     void AlternarEncendido(){
 
     }
-    void imprimir(){
+    void Imprimir(){
         for (auto &&foco : foquitos)
         {
             foco.Imprimir();

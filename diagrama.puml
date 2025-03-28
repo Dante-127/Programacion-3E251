@@ -1,5 +1,7 @@
 @startuml diagrama
 
+
+
 class Usuario
 class Serie{
     - Foco : foquitos[10]
