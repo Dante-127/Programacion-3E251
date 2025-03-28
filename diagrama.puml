@@ -1,0 +1,35 @@
+@startuml diagrama
+
+class Usuario
+class Serie{
+    - Foco : foquitos[10]
+    + EncenderCantidad(Numero)
+    + ApagarCantidad(Numero)
+    + EncenderTodo()
+    + ApagarTodo()
+    + RecorrerDerecha()
+    + RecorrerIzquierda()
+    +AlternarEncendido
+}
+class Foco {
+    - EstadoFoco : estado
+    +Encender()
+    +Apagar()
+    +Imprimir()
+}
+
+enum EstadoFoco {
+    Encendido
+    Apagado
+}
+Foco *-- EstadoFoco
+Foco --o Usuario
+Serie "1" *-- "10" Foco
+Usuario o-- Serie
+
+
+
+
+
+
+@enduml
