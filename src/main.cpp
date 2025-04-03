@@ -42,5 +42,4 @@ while (true){
     // serieNavidenia.ApagarTodo();
     // serieNavidenia.Imprimir();
     return 0;
-    //
 }
