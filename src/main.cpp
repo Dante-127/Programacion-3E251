@@ -3,6 +3,8 @@
 #include <iostream>
 #include <ftxui/screen/screen.hpp>
 #include <ftxui/dom/elements.hpp>
+#include <string>
+#include <thread>
 using namespace std;
 using namespace ftxui;
 int main(int argc, char const *argv[])
@@ -18,18 +20,20 @@ int main(int argc, char const *argv[])
     foco2.Imprimir();
 */
 ftxui::Screen pantalla = Screen::Create(Dimension::Full(),Dimension::Full());
-
-auto documento = vbox(
-    spinner(21,1)
-);
-
-Render(pantalla, documento);
-
-
-
-
+int fotograma = 0;
+string resetPosition;
+while (true){
+    auto documento = vbox(
+        spinner(22,fotograma)
+    );
+    Render(pantalla, documento);
+    cout << resetPosition;
+    pantalla.Print();
+    resetPosition = pantalla.ResetPosition();
+    fotograma ++;
+    this_thread::sleep_for(0.04s);
+}
     // Serie serieNavidenia;
-
     // serieNavidenia.Imprimir();
     // serieNavidenia.EncenderTodo();
     // serieNavidenia.Imprimir();
@@ -37,6 +41,5 @@ Render(pantalla, documento);
     // serieNavidenia.Imprimir();
     // serieNavidenia.ApagarTodo();
     // serieNavidenia.Imprimir();
-
     return 0;
 }
