@@ -15,3 +15,11 @@ run : $(EXE)
 clean :
 	rm $(BIN)/*
 
+memorias : $(SRC)/memoria.cpp
+	c++ $< -o $@ $(LIB) $(CXX) -I$(INCLUDE)
+
+runM :  $(BIN)/memorias
+	./$<
+
+cleanM :
+	rm $(BIN)/*
